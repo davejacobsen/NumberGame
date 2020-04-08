@@ -48,7 +48,9 @@ class GamePlayViewController: UIViewController {
     }
     
     func timerLoop() {
-        
+        timeLeft += timeStep
+        progress = timeLeft / startingTimeGiven
+    
     }
     
     func startNewLevel() {
