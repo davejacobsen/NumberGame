@@ -25,11 +25,12 @@ class GamePlayViewController: UIViewController {
     var userAnswer = false
     var timeStep: Float = 0.02
     
-    func GamePlayViewController(){}
+    var timer: Timer?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startNewGame()
     }
     
     // ACTIONS
@@ -38,7 +39,21 @@ class GamePlayViewController: UIViewController {
     
     
     //FUNCTIONS
+    func checkUserAnswer(){
+        
+    }
     
+    func startNewGame() {
+        
+    }
+    
+    func timerLoop() {
+        
+    }
+    
+    func startNewLevel() {
+        
+    }
     
     /*
     // MARK: - Navigation
