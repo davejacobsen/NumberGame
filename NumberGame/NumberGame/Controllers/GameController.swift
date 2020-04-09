@@ -12,8 +12,6 @@ class GameController: Codable {
     
     static var scores = [Int]()
     
-    var mergeConflictEngaged = true
-    
     //MARK: - CRUD
     
     static func fileURL() -> URL {
