@@ -41,6 +41,5 @@ class GameController: Codable {
         } catch {
             print("Error with \(#function) : \(error.localizedDescription) : ---> \(error)")
         }
-    }
 }
 
