@@ -42,9 +42,8 @@ class GamePlayViewController: UIViewController {
     // ACTIONS
   
     @IBAction func trueButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "gameOver", sender: self)
-//        userAnswer = true
-//        checkUserAnswer()
+        userAnswer = true
+        checkUserAnswer()
     }
     
     @IBAction func falseTapped(_ sender: Any) {
@@ -54,20 +53,35 @@ class GamePlayViewController: UIViewController {
     
     //FUNCTIONS
     func checkUserAnswer(){
-        
+        if userAnswer == (lhsNumOne < rhsNumOne){
+            currentScore += 1
+            scoreLabel.text = "Score: \(currentScore)"
+            startNewLevel()
+        } else {
+            performSegue(withIdentifier: "gameOver", sender: self)
+        }
     }
     
     func startNewGame() {
+        print("new game started")
+        currentScore = 0
         startNewLevel()
+        timerLoop()
     }
     
-    func timerLoop() {
-        timeLeft += timeStep
+    @objc func timerLoop() {
+        timeLeft -= timeStep
         progress = timeLeft / startingTimeGiven
-    
+        progressBar.setProgress(progress, animated: true)
+        if timeLeft <= 0 {
+            performSegue(withIdentifier: "gameOver", sender: self)
+
+        }
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(timeStep), target: self, selector: #selector(timerLoop), userInfo: nil, repeats: false)
     }
     
     func startNewLevel() {
+        print("New level started")
         lhsNumOne = Int(arc4random_uniform(UInt32(randomNumMax-randomNumMin+1))) + randomNumMin
         rhsNumOne = Int(arc4random_uniform(UInt32(randomNumMax-randomNumMin+1))) + randomNumMin
         
