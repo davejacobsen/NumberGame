@@ -25,7 +25,7 @@ class ScoreListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath)
         let score = GameController.scores[indexPath.row]
         cell.textLabel?.text = "Game \(indexPath.row + 1)"
-        cell.detailTextLabel?.text = "\(score)"
+        cell.detailTextLabel?.text = "Score: \(score)"
 
         return cell
     }
