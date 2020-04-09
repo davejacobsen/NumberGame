@@ -15,10 +15,11 @@
 		D54A7925243E77E10041A159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54A7923243E77E10041A159 /* LaunchScreen.storyboard */; };
 		D54A7932243E78FE0041A159 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A7931243E78FE0041A159 /* GameController.swift */; };
 		D54A7934243E7EED0041A159 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A7933243E7EED0041A159 /* GamePlayViewController.swift */; };
+		D5609E67243EC74700040606 /* PreAndPostGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5609E66243EC74700040606 /* PreAndPostGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9EDEB644243E84A700F1D7F7 /* ScoreListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScoreListTableViewController.swift; path = NumberGame/Views/ScoreListTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		9EDEB644243E84A700F1D7F7 /* ScoreListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScoreListTableViewController.swift; path = "NumberGame/Views/View Controllers/ScoreListTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D54A7915243E77D20041A159 /* NumberGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54A7918243E77D20041A159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D54A791A243E77D20041A159 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +29,7 @@
 		D54A7926243E77E10041A159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54A7931243E78FE0041A159 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		D54A7933243E7EED0041A159 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		D5609E66243EC74700040606 /* PreAndPostGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAndPostGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				D54A7933243E7EED0041A159 /* GamePlayViewController.swift */,
 				9EDEB644243E84A700F1D7F7 /* ScoreListTableViewController.swift */,
+				D5609E66243EC74700040606 /* PreAndPostGameViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				9EDEB645243E84A700F1D7F7 /* ScoreListTableViewController.swift in Sources */,
 				D54A7919243E77D20041A159 /* AppDelegate.swift in Sources */,
+				D5609E67243EC74700040606 /* PreAndPostGameViewController.swift in Sources */,
 				D54A7932243E78FE0041A159 /* GameController.swift in Sources */,
 				D54A7934243E7EED0041A159 /* GamePlayViewController.swift in Sources */,
 				D54A791B243E77D20041A159 /* SceneDelegate.swift in Sources */,
