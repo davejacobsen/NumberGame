@@ -26,9 +26,9 @@ class GamePlayViewController: UIViewController {
     var randomNumMin = 1
     var randomNumMax = 10
     
-    var timeLeft: Float = 2.0
-    let startingTimeGiven: Float = 2.0
-    var progress: Float = 2.0
+    var timeLeft: Float = 6.0
+    let startingTimeGiven: Float = 6.0
+    var progress: Float = 6.0
     var userAnswer = false
     let timeStep: Float = 0.1
     var lostGame = false
@@ -53,7 +53,7 @@ class GamePlayViewController: UIViewController {
     
     //FUNCTIONS
     func checkUserAnswer(){
-        if userAnswer == (lhsNumOne < rhsNumOne){
+        if userAnswer == ((lhsNumOne + lhsNumTwo) < (rhsNumOne + rhsNumTwo)){
             print("\n Answer correct. timeleft: \(timeLeft)")
             currentScore += 1
             scoreLabel.text = "Score: \(currentScore)"
@@ -98,13 +98,15 @@ class GamePlayViewController: UIViewController {
     func startNewLevel() {
         print("New level started. time left before reset \(timeLeft)")
         lhsNumOne = Int(arc4random_uniform(UInt32(randomNumMax-randomNumMin+1))) + randomNumMin
+        lhsNumTwo = Int(arc4random_uniform(UInt32(randomNumMax-randomNumMin+1))) + randomNumMin
         rhsNumOne = Int(arc4random_uniform(UInt32(randomNumMax-randomNumMin+1))) + randomNumMin
+        rhsNumTwo = Int(arc4random_uniform(UInt32(randomNumMax-randomNumMin+1))) + randomNumMin
         
-        lhsNumsLabel.text = "\(lhsNumOne)"
-        rhsNumsLabel.text = "\(rhsNumOne)"
+        lhsNumsLabel.text = "\(lhsNumOne) + \(lhsNumTwo)"
+        rhsNumsLabel.text = "\(rhsNumOne) + \(rhsNumTwo)"
         
         timeLeft = startingTimeGiven
-        progress = 2.0
+        progress = 6.0
         print("New level started. time left after reset \(timeLeft)")
         progressBar.setProgress(progress, animated: true)
     }
