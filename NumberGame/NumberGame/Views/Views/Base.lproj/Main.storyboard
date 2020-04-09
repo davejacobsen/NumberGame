@@ -83,7 +83,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="falseTapped:" destination="Aw1-4d-mA7" eventType="touchUpInside" id="l4c-4B-Uda"/>
+                                            <action selector="falseButtonTapped:" destination="Aw1-4d-mA7" eventType="touchUpInside" id="l4c-4B-Uda"/>
                                         </connections>
                                     </button>
                                 </subviews>

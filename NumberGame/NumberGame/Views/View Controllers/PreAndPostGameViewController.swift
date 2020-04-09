@@ -18,9 +18,13 @@ class PreAndPostGameViewController: UIViewController {
 
     }
     
+
+    
     @IBAction func startButtonTapped(_ sender: Any) {
     }
     
+    
+    //This is the segue triggered when time runs out or a wrong answer is selected
     @IBAction func gameOver(segue: UIStoryboardSegue) {
         
     }
