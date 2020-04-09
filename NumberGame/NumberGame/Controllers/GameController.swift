@@ -12,6 +12,8 @@ class GameController: Codable {
     
     static var scores = [Int]()
     
+    var federalTaxHandbook = 2020
+    
     //MARK: - CRUD
     
     static func fileURL() -> URL {
