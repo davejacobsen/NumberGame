@@ -24,7 +24,7 @@ class GamePlayViewController: UIViewController {
     var rhsNumOne = 0
     var rhsNumTwo = 0
     var randomNumMin = 1
-    var randomNumMax = 10
+    var randomNumMax = 9
     
     var timeLeft: Float = 6.0
     let startingTimeGiven: Float = 6.0
