@@ -9,34 +9,26 @@
 import UIKit
 
 class PreAndPostGameViewController: UIViewController {
-
-    @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
-
-    
+    //segues over to GamePlayVC
     @IBAction func startButtonTapped(_ sender: Any) {
     }
     
-    
     //This is the segue triggered when time runs out or a wrong answer is selected
     @IBAction func gameOver(segue: UIStoryboardSegue) {
-        
+        print("View appearing. Current score array: \(GameController.scores)")
+        if GameController.scores.first != nil {
+            if GameController.scores.last == 1 {
+                scoreLabel.text = "You scored 1 point :("
+            } else {
+                scoreLabel.text = "You scored \(GameController.scores.last!) points!"
+            }
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -41,7 +41,6 @@ class GamePlayViewController: UIViewController {
     }
     
     // ACTIONS
-    
     @IBAction func trueButtonTapped(_ sender: Any) {
         userAnswer = true
         checkUserAnswer()
@@ -96,7 +95,6 @@ class GamePlayViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(timeStep), target: self, selector: #selector(timerLoop), userInfo: nil, repeats: false)
     }
     
-    
     func startNewLevel() {
         print("New level started. time left before reset \(timeLeft)")
         lhsNumOne = Int(arc4random_uniform(UInt32(randomNumMax-randomNumMin+1))) + randomNumMin
@@ -110,15 +108,4 @@ class GamePlayViewController: UIViewController {
         print("New level started. time left after reset \(timeLeft)")
         progressBar.setProgress(progress, animated: true)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
