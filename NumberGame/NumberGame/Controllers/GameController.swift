@@ -12,6 +12,8 @@ class GameController {
     
     static var scores = [Int]()
 
+    static var test = 42.0
+    
     init (){
     }
 }
