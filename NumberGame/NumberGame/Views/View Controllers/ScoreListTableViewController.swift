@@ -15,18 +15,61 @@ class ScoreListTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GameController.scores.count
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return GameController.scores.count
+        default:
+            return 1
+        }
     }
 
        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath)
-        let score = GameController.scores[indexPath.row]
-        cell.textLabel?.text = "Game \(indexPath.row + 1)"
-        cell.detailTextLabel?.text = "Score: \(score)"
+        
+        switch indexPath.section {
+            
+        case 0:
+            let highScoreCell = tableView.dequeueReusableCell(withIdentifier: "highScoreCell", for: indexPath)
+            guard let highScore = GameController.scores.max() else { return UITableViewCell() }
+            print(highScore)
+            let scoreIndex = GameController.scores.firstIndex(of: highScore)
+            highScoreCell.textLabel?.text = "Game \(scoreIndex! + 1)"
+            highScoreCell.detailTextLabel?.text = "Score: \(String(describing: highScore))"
 
-        return cell
+            return highScoreCell
+            
+        default:
+            let scoreCell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath)
+            let score = GameController.scores[indexPath.row]
+            scoreCell.textLabel?.text = "Game \(indexPath.row + 1)"
+            scoreCell.detailTextLabel?.text = "Score: \(score)"
+
+            return scoreCell
+        }
+        
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "High Score"
+        default:
+            return "Scoreboard"
+        }
+    }
+    
+    
 }
