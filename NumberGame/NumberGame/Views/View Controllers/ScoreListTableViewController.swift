@@ -17,6 +17,7 @@ class ScoreListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        GameController.loadFromPersistentStore()
         tableView.reloadData()
     }
     
