@@ -63,6 +63,7 @@ class GamePlayViewController: UIViewController {
             lostGame = true
             print("Before score: \(currentScore)")
             GameController.scores.append(currentScore)
+            GameController.saveToPersistentStore()
             print("game controller scores: \(GameController.scores)")
             
             performSegue(withIdentifier: "gameOver", sender: self)
@@ -84,6 +85,7 @@ class GamePlayViewController: UIViewController {
             print("time ran out. time left \(timeLeft)")
             print("Before score: \(currentScore)")
             GameController.scores.append(currentScore)
+            GameController.saveToPersistentStore()
             print("game controller scores: \(GameController.scores)")
             performSegue(withIdentifier: "gameOver", sender: self)
             print("post segue. about to return")
