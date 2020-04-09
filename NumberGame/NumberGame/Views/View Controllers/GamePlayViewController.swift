@@ -27,7 +27,7 @@ class GamePlayViewController: UIViewController {
     var randomNumMax = 10
     
     var timeLeft: Float = 2.0
-    var startingTimeGiven: Float = 2.0
+    let startingTimeGiven: Float = 2.0
     var progress: Float = 2.0
     var userAnswer = false
     var timeStep: Float = 0.02
@@ -58,12 +58,16 @@ class GamePlayViewController: UIViewController {
             scoreLabel.text = "Score: \(currentScore)"
             startNewLevel()
         } else {
+            print("Game over: wrong answer")
+            print("Before score: \(currentScore)")
+            GameController.scores.append(currentScore)
+            print("game controller scores: \(GameController.scores)")
+            
             performSegue(withIdentifier: "gameOver", sender: self)
         }
     }
     
     func startNewGame() {
-        print("new game started")
         currentScore = 0
         startNewLevel()
         timerLoop()
@@ -74,6 +78,10 @@ class GamePlayViewController: UIViewController {
         progress = timeLeft / startingTimeGiven
         progressBar.setProgress(progress, animated: true)
         if timeLeft <= 0 {
+            print("Game over: time up")
+                       print("Before score: \(currentScore)")
+                       GameController.scores.append(currentScore)
+                       print("game controller scores: \(GameController.scores)")
             performSegue(withIdentifier: "gameOver", sender: self)
 
         }

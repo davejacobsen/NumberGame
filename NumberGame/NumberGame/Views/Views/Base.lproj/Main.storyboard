@@ -58,8 +58,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fcz-fp-Bgm">
-                                <rect key="frame" x="0.0" y="671.5" width="414" height="2"/>
-                                <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="668.5" width="414" height="2"/>
+                                <color key="progressTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2b0-YX-4q8">
                                 <rect key="frame" x="0.0" y="673.5" width="414" height="134.5"/>
@@ -120,7 +120,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2b0-YX-4q8" firstAttribute="top" secondItem="fcz-fp-Bgm" secondAttribute="bottom" id="2g7-Wk-qJG"/>
+                            <constraint firstItem="2b0-YX-4q8" firstAttribute="top" secondItem="fcz-fp-Bgm" secondAttribute="bottom" constant="3" id="2g7-Wk-qJG"/>
                             <constraint firstItem="lYb-6T-u80" firstAttribute="leading" secondItem="lny-Oe-msR" secondAttribute="leading" constant="20" id="3Z5-du-fKt"/>
                             <constraint firstItem="2b0-YX-4q8" firstAttribute="height" secondItem="lny-Oe-msR" secondAttribute="height" multiplier="0.1667" id="H7a-TC-lGF"/>
                             <constraint firstItem="fcz-fp-Bgm" firstAttribute="leading" secondItem="wqG-C4-Z0y" secondAttribute="leading" id="KD4-Cg-vsx"/>
