@@ -14,6 +14,8 @@ class GameController {
     
     static var test = 42
 
+    static var test = 42.0
+    
     init (){
     }
 }

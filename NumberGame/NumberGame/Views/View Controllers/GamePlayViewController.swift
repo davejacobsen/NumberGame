@@ -28,9 +28,9 @@ class GamePlayViewController: UIViewController {
     
     var timeLeft: Float = 6.0
     let startingTimeGiven: Float = 6.0
-    var progress: Float = 6.0
+    var progress: Float = 1.0
     var userAnswer = false
-    let timeStep: Float = 0.1
+    let timeStep: Float = 0.02
     var lostGame = false
     
     var timer: Timer?
@@ -76,10 +76,12 @@ class GamePlayViewController: UIViewController {
     }
     
     @objc func timerLoop() {
-        print("new loop. time left:\(timeLeft)")
-        timeLeft -= timeStep
+    //    print("new loop. time left:\(timeLeft)")
+        print("progress before loop reset: \(progress)")
         progress = timeLeft / startingTimeGiven
+        print("progress after loop reset: \(progress)")
         progressBar.setProgress(progress, animated: true)
+        timeLeft -= timeStep
         if timeLeft <= 0 {
             print("time ran out. time left \(timeLeft)")
             print("Before score: \(currentScore)")
@@ -106,8 +108,10 @@ class GamePlayViewController: UIViewController {
         rhsNumsLabel.text = "\(rhsNumOne) + \(rhsNumTwo)"
         
         timeLeft = startingTimeGiven
-        progress = 6.0
+        print("\nprogress before new level reset: \(progress)")
+        progress = 1.0
         print("New level started. time left after reset \(timeLeft)")
         progressBar.setProgress(progress, animated: true)
+        print("\nprogress after new level reset and progress bar set: \(progress)")
     }
 }
